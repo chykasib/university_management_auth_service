@@ -1,25 +1,30 @@
-import express, { Application, Request, Response } from 'express'
-import usersRouter from './app/modules/users/users.route'
-import cors from 'cors'
-import { dbConnect } from './config/dbs'
-import usersService from './app/modules/users/users.service'
-const app: Application = express()
+import express, { Application } from 'express';
+import cors from 'cors';
+import { dbConnect } from './config/dbs';
+import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import { UserRoutes } from './app/modules/user/user.route';
 
-app.use(cors())
+const app: Application = express();
+
+app.use(cors());
 // parser
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-dbConnect()
-// testing route
-app.use('/api/v1/users/', usersRouter)
-app.get('/', async (req: Request, res: Response) => {
-  await usersService.createUser({
-    id: '999',
-    password: '1234',
-    role: 'student',
-  })
-  res.send('working successfully')
-})
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+dbConnect();
+// Application routes
+console.log(process.env);
+app.use('/api/v1/users/', UserRoutes);
 
-export default app
+// testing route
+// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+//   // Promise.reject(new Error('Unhandled promise rejection'))
+//   //   throw new ApiError(400, 'orebaba error ')
+//   //   next('ore baba') // error
+//   throw new Error('ore baba')
+// })
+
+// global error handler
+
+app.use(globalErrorHandler);
+export default app;
