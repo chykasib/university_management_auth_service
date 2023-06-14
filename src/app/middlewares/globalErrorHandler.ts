@@ -8,8 +8,9 @@ import ApiError from '../../errors/apiError';
 import { errorlogger } from '../../shared/logger';
 import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
+import handleCastError from '../../errors/handleCastError';
 
-const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
+const globalErrorHandler: ErrorRequestHandler = (err, req, res) => {
   config.env === 'development'
     ? console.log('GlobalErrorHandler', err)
     : errorlogger.error('GlobalErrorHandler', err);
@@ -18,7 +19,6 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   let message = "'something went wrong !";
   let errormessage: IGenericErrorMessage[] = [];
 
-  next();
   if (err?.name === 'ValidatorError') {
     const simplifiedError = handleValidatorError(err);
     statusCode = simplifiedError.statusCode;
@@ -50,6 +50,11 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
           },
         ]
       : [];
+  } else if (err?.name === 'CastError') {
+    const simplifiedError = handleCastError(err);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errormessage = simplifiedError.errormessage;
   }
 
   res.status(statusCode).json({
