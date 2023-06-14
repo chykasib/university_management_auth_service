@@ -8,7 +8,7 @@ import {
   academicSemesterMonths,
   academicSemesterTitles,
 } from './academicSemester.constant';
-import ApiError from '../../errors/apiError';
+import ApiError from '../../../errors/apiError';
 import httpStatus from 'http-status';
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
@@ -28,6 +28,9 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 

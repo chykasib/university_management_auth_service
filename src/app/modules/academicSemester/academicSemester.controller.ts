@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { AcademicSemesterService } from './academicSemester.service';
-import catchAsync from '../../shared/catchAsync';
-import sendResponse from '../../shared/sendResponse';
+import catchAsync from '../../../shared/catchAsync';
+import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
-import pick from '../../shared/pick';
-import { paginationFields } from '../../constants/pagination';
+import pick from '../../../shared/pick';
+import { paginationFields } from '../../../constants/pagination';
 import { IAcademicSemester } from './academicSemester.interface';
 import { academicSemesterFilterableFields } from './academicSemester.constant';
 
@@ -59,9 +59,22 @@ const updateSemester = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+
+const deleteSemester = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await AcademicSemesterService.deleteSemester(id);
+  sendResponse<IAcademicSemester>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Semester deleted successfully!',
+    data: result,
+  });
+});
+
 export const AcademicSemesterController = {
   createSemester,
   getAllSemesters,
   getSingleSemester,
   updateSemester,
+  deleteSemester,
 };
