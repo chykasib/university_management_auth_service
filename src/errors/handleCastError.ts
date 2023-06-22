@@ -5,15 +5,15 @@ const handleCastError = (error: mongoose.Error.CastError) => {
   const errors: IGenericErrorMessage[] = [
     {
       path: error.path,
-      message: 'Invalid id',
+      message: 'Invalid Id',
     },
   ];
 
   const statusCode = 400;
   return {
     statusCode,
-    message: 'CastError',
-    errormessage: errors,
+    message: 'Cast Error',
+    errorMessages: errors,
   };
 };
 

@@ -1,68 +1,82 @@
-/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import { ErrorRequestHandler } from 'express';
+/* eslint-disable no-unused-expressions */
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import config from '../../config';
-import { IGenericErrorMessage } from '../../interfaces/error';
-import handleValidatorError from '../../errors/handleValidatorError';
-import ApiError from '../../errors/apiError';
-import { errorlogger } from '../../shared/logger';
-import { ZodError } from 'zod';
-import handleZodError from '../../errors/handleZodError';
-import handleCastError from '../../errors/handleCastError';
 
-const globalErrorHandler: ErrorRequestHandler = (err, req, res) => {
+import { ZodError } from 'zod';
+import handleCastError from '../../errors/handleCastError';
+import handleZodError from '../../errors/handleZodError';
+import { IGenericErrorMessage } from '../../interfaces/error';
+import { errorlogger } from '../../shared/logger';
+import handleValidationError from '../../errors/handleValidatorError';
+import ApiError from '../../errors/apiError';
+
+const globalErrorHandler: ErrorRequestHandler = (
+  error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   config.env === 'development'
-    ? console.log('GlobalErrorHandler', err)
-    : errorlogger.error('GlobalErrorHandler', err);
+    ? console.log(`🐱‍🏍 globalErrorHandler ~~`, { error })
+    : errorlogger.error(`🐱‍🏍 globalErrorHandler ~~`, error);
 
   let statusCode = 500;
-  let message = "'something went wrong !";
-  let errormessage: IGenericErrorMessage[] = [];
+  let message = 'Something went wrong !';
+  let errorMessages: IGenericErrorMessage[] = [];
 
-  if (err?.name === 'ValidatorError') {
-    const simplifiedError = handleValidatorError(err);
+  if (error?.name === 'ValidationError') {
+    const simplifiedError = handleValidationError(error);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
-    errormessage = simplifiedError.errormessage;
-  } else if (err instanceof ZodError) {
-    const simplifiedError = handleZodError(err);
-    (statusCode = simplifiedError.statusCode),
-      (message = simplifiedError.message),
-      (errormessage = simplifiedError.errormessage);
-  } else if (err instanceof ApiError) {
-    statusCode = err?.statusCode;
-    message = err?.message;
-    errormessage = err?.message
+    errorMessages = simplifiedError.errorMessages;
+  } else if (error instanceof ZodError) {
+    const simplifiedError = handleZodError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  } else if (error?.name === 'CastError') {
+    const simplifiedError = handleCastError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  } else if (error instanceof ApiError) {
+    statusCode = error?.statusCode;
+    message = error.message;
+    errorMessages = error?.message
       ? [
           {
             path: '',
-            message: err?.message,
+            message: error?.message,
           },
         ]
       : [];
-  } else if (err instanceof Error) {
-    message = err?.message;
-    errormessage = err?.message
+  } else if (error instanceof Error) {
+    message = error?.message;
+    errorMessages = error?.message
       ? [
           {
             path: '',
-            message: err?.message,
+            message: error?.message,
           },
         ]
       : [];
-  } else if (err?.name === 'CastError') {
-    const simplifiedError = handleCastError(err);
-    statusCode = simplifiedError.statusCode;
-    message = simplifiedError.message;
-    errormessage = simplifiedError.errormessage;
   }
 
   res.status(statusCode).json({
     success: false,
     message,
-    errormessage,
-    stack: config.env !== 'production' ? err?.stack : undefined,
+    errorMessages,
+    stack: config.env !== 'production' ? error?.stack : undefined,
   });
 };
 
 export default globalErrorHandler;
+
+//path:
+//message:
+
+// 2025 Fall
+
+// 2025 and

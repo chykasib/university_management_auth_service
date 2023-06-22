@@ -1,6 +1,7 @@
-import { AnyZodObject, ZodEffects } from 'zod';
 import { NextFunction, Request, Response } from 'express';
-const ValidateRequest =
+import { AnyZodObject, ZodEffects } from 'zod';
+
+const validateRequest =
   (schema: AnyZodObject | ZodEffects<AnyZodObject>) =>
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
@@ -11,9 +12,9 @@ const ValidateRequest =
         cookies: req.cookies,
       });
       return next();
-    } catch (err) {
-      next(err);
+    } catch (error) {
+      next(error);
     }
   };
 
-export default ValidateRequest;
+export default validateRequest;
