@@ -17,6 +17,7 @@ async function bootstrap() {
   }
 
   process.on('unhandledRejection', err => {
+    console.log('unhandled rejection is detected, we are closing server', err);
     if (server) {
       server.close(() => {
         errorlogger.error(err);
