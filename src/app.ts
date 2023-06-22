@@ -4,7 +4,6 @@ import { dbConnect } from './config/dbs';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routers from './app/routes';
 import httpStatus from 'http-status';
-import { generateFacultyId } from './app/modules/user/user.utils';
 
 const app: Application = express();
 
@@ -47,18 +46,18 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-const academicSemester = {
-  title: 'Autumn',
-  code: '01',
-  year: '2023',
-  startMonth: 'June',
-  endMonth: 'November',
-};
+// const academicSemester = {
+//   title: 'Autumn',
+//   code: '01',
+//   year: '2023',
+//   startMonth: 'June',
+//   endMonth: 'November',
+// };
 
-const testId = async () => {
-  const testId = await generateFacultyId(academicSemester);
-  console.log(testId);
-};
+// // const testId = async () => {
+// //   const testId = await generateFacultyId(academicSemester);
+// //   console.log(testId);
+// // };
 
-testId();
+// testId();
 export default app;
