@@ -1,0 +1,80 @@
+{
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:28:47.463Z'
+}
+{
+  ok: 0,
+  code: 2,
+  codeName: 'BadValue',
+  '$clusterTime': {
+    clusterTime: new Timestamp({ t: 1686666968, i: 9 }),
+    signature: {
+      hash: Binary.createFromBase64("ok9QWvuT/FwHNSxWcTw30gs0L0U=", 0),
+      keyId: new Long("7199260620057739266")
+    }
+  },
+  operationTime: new Timestamp({ t: 1686666968, i: 9 }),
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:37:34.599Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:41:16.591Z'
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:45:31.364Z'
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:48:06.425Z'
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T14:52:43.113Z'
+}

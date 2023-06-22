@@ -1,0 +1,56 @@
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:52:12.421Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:52:13.378Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:55:38.407Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:55:39.193Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:55:47.575Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:55:48.166Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:57:48.902Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T23:57:49.666Z'
+}

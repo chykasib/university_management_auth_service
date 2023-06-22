@@ -1,0 +1,28 @@
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T19:10:11.897Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T19:11:08.090Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T19:13:05.355Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T19:13:58.529Z'
+}

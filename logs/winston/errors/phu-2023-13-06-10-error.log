@@ -1,0 +1,73 @@
+{
+  statusCode: 409,
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T04:14:39.023Z'
+}
+{
+  statusCode: 409,
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T04:26:05.611Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-13T04:29:04.809Z'
+}
+{
+  service: 'user-service',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  level: 'error',
+  message: 'failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)',
+  label: 'ph',
+  timestamp: '2023-06-13T04:40:50.467Z'
+}
+{
+  service: 'user-service',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  level: 'error',
+  message: 'failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)',
+  label: 'ph',
+  timestamp: '2023-06-13T04:44:47.522Z'
+}
+{
+  service: 'user-service',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  level: 'error',
+  message: 'failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)',
+  label: 'ph',
+  timestamp: '2023-06-13T04:44:48.801Z'
+}
+{
+  service: 'user-service',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  level: 'error',
+  message: 'failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)',
+  label: 'ph',
+  timestamp: '2023-06-13T04:46:07.866Z'
+}

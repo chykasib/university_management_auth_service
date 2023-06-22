@@ -1,17 +1,40 @@
-import mongoose from "mongoose";
-import app from "./app";
-import config from "./config";
+import app from './app';
+import { errorlogger, logger } from './shared/logger';
+import { Server } from 'http';
 
+process.on('uncaughtException', err => {
+  errorlogger.error('uncaught exception is detected ', err);
+  process.exit(1);
+});
+let server: Server;
 async function bootstrap() {
   try {
-    await mongoose.connect(config.database_url as string);
-    console.log(`database connected successfully`);
-    app.listen(config.port, () => {
-      console.log(`database listening on port ${config.port}`);
+    server = app.listen(5000, () => {
+      logger.info('server is running port 5000');
     });
   } catch (err) {
-    console.error(`database connect to fail`, err);
+    errorlogger.error(err);
   }
+
+  process.on('unhandledRejection', err => {
+    console.log('unhandled rejection is detected, we are closing server', err);
+    if (server) {
+      server.close(() => {
+        errorlogger.error(err);
+        process.exit(1);
+      });
+    } else {
+      process.exit(1);
+    }
+  });
 }
 
 bootstrap();
+
+//sigterm
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM IS RECEIVED...');
+  if (server) {
+    server.close();
+  }
+});
