@@ -10,7 +10,7 @@ import { facultySearchableFields } from './faculty.constant';
 import { IFaculty, IFacultyFilters } from './faculty.interface';
 import { Faculty } from './faculty.model';
 import ApiError from '../../../errors/apiError';
-import { User } from '../user/user.module';
+import { User } from '../user/user.model';
 
 const getAllFaculties = async (
   filters: IFacultyFilters,

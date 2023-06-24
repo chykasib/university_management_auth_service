@@ -1,0 +1,11 @@
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { title: 1 },
+  keyValue: { title: 'CSE Department' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:25:26.838Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}

@@ -1,0 +1,176 @@
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:01:10.052Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:01:11.175Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:01:45.941Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:01:46.644Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:11:45.680Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:11:46.666Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:12:35.415Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:12:36.415Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:15:58.107Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:15:59.130Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:24:19.496Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:24:20.412Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:27:18.931Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:27:19.890Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:32:25.348Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:32:26.230Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:32:47.297Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:32:48.032Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:33:12.822Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:33:13.839Z'
+}
+{
+  message: 'server is running port 5000',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:34:08.932Z'
+}
+{
+  message: 'database is connected successfully',
+  level: 'info',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T02:34:09.870Z'
+}
+Sat Jun 24 2023 8:34:32 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:34:32 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:34:48 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:34:49 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:35:22 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:35:23 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:36:45 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:36:46 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:37:27 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:37:27 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:40:11 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:40:12 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:40:29 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:40:30 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:45:42 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:45:42 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:46:43 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:46:44 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:48:34 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:48:35 } [PH] info: database is connected successfully
+Sat Jun 24 2023 8:59:5 } [PH] info: server is running port 5000
+Sat Jun 24 2023 8:59:6 } [PH] info: database is connected successfully

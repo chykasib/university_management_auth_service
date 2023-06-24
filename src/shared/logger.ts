@@ -1,26 +1,26 @@
+/* eslint-disable no-undef */
+import path from 'path';
 import { createLogger, format, transports } from 'winston';
-import Path from 'path';
-const { combine, timestamp, label, printf, prettyPrint } = format;
 import DailyRotateFile from 'winston-daily-rotate-file';
-// custom log format
+const { combine, timestamp, label, printf } = format;
+
+//Customm Log Format
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
   const date = new Date(timestamp);
   const hour = date.getHours();
   const minutes = date.getMinutes();
-  const second = date.getSeconds();
-
-  return `${date.toDateString()}: ${hour}:${minutes}:${second} [${label}] ${level}: ${message}`;
+  const seconds = date.getSeconds();
+  return `${date.toDateString()} ${hour}:${minutes}:${seconds} } [${label}] ${level}: ${message}`;
 });
 
 const logger = createLogger({
   level: 'info',
-  format: combine(label({ label: 'ph' }), timestamp(), myFormat, prettyPrint()),
-  defaultMeta: { service: 'user-service' },
+  format: combine(label({ label: 'PH' }), timestamp(), myFormat),
   transports: [
     new transports.Console(),
     new DailyRotateFile({
-      filename: Path.join(
+      filename: path.join(
         process.cwd(),
         'logs',
         'winston',
@@ -37,12 +37,11 @@ const logger = createLogger({
 
 const errorlogger = createLogger({
   level: 'error',
-  format: combine(label({ label: 'ph' }), timestamp(), myFormat, prettyPrint()),
-  defaultMeta: { service: 'user-service' },
+  format: combine(label({ label: 'PH' }), timestamp(), myFormat),
   transports: [
     new transports.Console(),
     new DailyRotateFile({
-      filename: Path.join(
+      filename: path.join(
         process.cwd(),
         'logs',
         'winston',
