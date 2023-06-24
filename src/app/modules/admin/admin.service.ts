@@ -8,7 +8,7 @@ import { IAdmin, IAdminFilters } from './admin.interface';
 import { adminSearchableFields } from './admin.constant';
 import { Admin } from './admin.model';
 import ApiError from '../../../errors/apiError';
-import { User } from '../user/user.module';
+import { User } from '../user/user.model';
 
 const getAllAdmins = async (
   filters: IAdminFilters,

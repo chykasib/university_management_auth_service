@@ -1,0 +1,65 @@
+{
+  path: 'admin',
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:25:15.188Z'
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'Rashedul@gmail.com' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:27:30.385Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { contactNo: 1 },
+  keyValue: { contactNo: '0133834202' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:28:30.652Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  path: 'admin',
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:29:15.335Z'
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'rashedul@gmail.com' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:33:28.050Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { contactNo: 1 },
+  keyValue: { contactNo: '0188282345' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:34:30.291Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  path: 'admin',
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-24T01:35:10.902Z'
+}

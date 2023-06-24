@@ -1,0 +1,22 @@
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'kasib.md.chy@gmail.com' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-23T14:01:13.095Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { email: 1 },
+  keyValue: { email: 'md.chy@gmail.com' },
+  level: 'error',
+  service: 'user-service',
+  label: 'ph',
+  timestamp: '2023-06-23T14:37:52.945Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}

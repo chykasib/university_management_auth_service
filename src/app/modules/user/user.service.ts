@@ -14,7 +14,7 @@ import {
 } from './user.utils';
 import { AcademicSemester } from '../academicSemester/academicSemesterModel';
 import ApiError from '../../../errors/apiError';
-import { User } from './user.module';
+import { User } from './user.model';
 import { Admin } from '../admin/admin.model';
 import { IAdmin } from '../admin/admin.interface';
 
@@ -27,26 +27,23 @@ const createStudent = async (
     user.password = config.default_student_pass as string;
   }
   // set role
-  user.role = 'student';
 
+  user.role = 'student';
   const academicSemester = await AcademicSemester.findById(
     student.academicSemester
   ).lean();
-
   // generate student id
+
   let newUserAllData = null;
   const session = await mongoose.startSession();
   try {
     session.startTransaction();
-
     const id = await generateStudentId(academicSemester as IAcademicSemester);
-
     user.id = id;
     student.id = id;
 
     //array
     const newStudent = await Student.create([student], { session });
-
     if (!newStudent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
     }
@@ -97,6 +94,7 @@ const createFaculty = async (
   if (!user.password) {
     user.password = config.default_faculty_pass as string;
   }
+
   // set role
   user.role = 'faculty';
 
