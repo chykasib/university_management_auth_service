@@ -1,0 +1,4 @@
+Sun Jun 25 2023 0:1:24 } [PH] error: failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net
+Sun Jun 25 2023 0:2:5 } [PH] error: failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net
+Sun Jun 25 2023 0:2:39 } [PH] error: failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net
+Sun Jun 25 2023 0:4:1 } [PH] error: failed to connect database querySrv ECONNREFUSED _mongodb._tcp.cluster0.rx4i6uo.mongodb.net

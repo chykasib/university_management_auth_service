@@ -11,4 +11,8 @@ export type ILoginUserResponse = {
   needsPasswordChange: boolean;
 };
 
+export type IRefreshTokenResponse = {
+  accessToken: string;
+};
+
 export type LoginUserModel = Model<ILoginUser, Record<string, unknown>>;
