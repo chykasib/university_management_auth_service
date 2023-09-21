@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import config from '../../config';
 
@@ -15,7 +15,8 @@ import ApiError from '../../errors/apiError';
 const globalErrorHandler: ErrorRequestHandler = (
   error,
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ) => {
   config.env === 'development'
     ? console.log(`🐱‍🏍 globalErrorHandler ~~`, { error })
@@ -72,10 +73,3 @@ const globalErrorHandler: ErrorRequestHandler = (
 };
 
 export default globalErrorHandler;
-
-//path:
-//message:
-
-// 2025 Fall
-
-// 2025 and
