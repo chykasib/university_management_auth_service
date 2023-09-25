@@ -1,20 +1,29 @@
+import httpStatus from 'http-status';
 import { Schema, model } from 'mongoose';
-import {
-  AcademicSemesterModel,
-  IAcademicSemester,
-} from './academicSemester.interface';
 import {
   academicSemesterCodes,
   academicSemesterMonths,
   academicSemesterTitles,
 } from './academicSemester.constant';
+import { IAcademicSemester } from './academicSemester.interface';
 import ApiError from '../../../errors/apiError';
-import httpStatus from 'http-status';
+
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
-    title: { type: String, required: true, enum: academicSemesterTitles },
-    year: { type: String, required: true },
-    code: { type: String, required: true, enum: academicSemesterCodes },
+    title: {
+      type: String,
+      required: true,
+      enum: academicSemesterTitles,
+    },
+    year: {
+      type: Number,
+      required: true,
+    },
+    code: {
+      type: String,
+      required: true,
+      enum: academicSemesterCodes,
+    },
     startMonth: {
       type: String,
       required: true,
@@ -24,6 +33,10 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
       type: String,
       required: true,
       enum: academicSemesterMonths,
+    },
+    syncId: {
+      type: String,
+      required: true,
     },
   },
   {
@@ -35,11 +48,12 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
 );
 
 academicSemesterSchema.pre('save', async function (next) {
-  const isExit = await AcademicSemester.findOne({
+  const isExist = await AcademicSemester.findOne({
     title: this.title,
     year: this.year,
   });
-  if (isExit) {
+  // console.log(isExist)
+  if (isExist) {
     throw new ApiError(
       httpStatus.CONFLICT,
       'Academic semester is already exist !'
@@ -48,7 +62,7 @@ academicSemesterSchema.pre('save', async function (next) {
   next();
 });
 
-export const AcademicSemester = model<IAcademicSemester, AcademicSemesterModel>(
+export const AcademicSemester = model<IAcademicSemester>(
   'AcademicSemester',
   academicSemesterSchema
 );

@@ -4,13 +4,14 @@ import {
   academicSemesterMonths,
   academicSemesterTitles,
 } from './academicSemester.constant';
-const createAcademicSemesterUserZodSchema = z.object({
+
+const createAcademicSemesterZodSchema = z.object({
   body: z.object({
     title: z.enum([...academicSemesterTitles] as [string, ...string[]], {
       required_error: 'Title is required',
     }),
     year: z.string({
-      required_error: 'year is required',
+      required_error: 'Year is required ',
     }),
     code: z.enum([...academicSemesterCodes] as [string, ...string[]]),
     startMonth: z.enum([...academicSemesterMonths] as [string, ...string[]], {
@@ -22,7 +23,7 @@ const createAcademicSemesterUserZodSchema = z.object({
   }),
 });
 
-const updateAcademicSemesterUserZodSchema = z
+const updateAcademicSemesterZodSchema = z
   .object({
     body: z.object({
       title: z
@@ -32,7 +33,7 @@ const updateAcademicSemesterUserZodSchema = z
         .optional(),
       year: z
         .string({
-          required_error: 'year is required',
+          required_error: 'Year is required ',
         })
         .optional(),
       code: z
@@ -60,6 +61,6 @@ const updateAcademicSemesterUserZodSchema = z
   );
 
 export const AcademicSemesterValidation = {
-  createAcademicSemesterUserZodSchema,
-  updateAcademicSemesterUserZodSchema,
+  createAcademicSemesterZodSchema,
+  updateAcademicSemesterZodSchema,
 };

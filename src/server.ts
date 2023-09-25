@@ -2,6 +2,7 @@ import app from './app';
 import { errorlogger, logger } from './shared/logger';
 import { Server } from 'http';
 import { RedisClient } from './shared/redis';
+import subscribeToEvents from './app/events';
 
 process.on('uncaughtException', err => {
   errorlogger.error('uncaught exception is detected ', err);
@@ -10,7 +11,9 @@ process.on('uncaughtException', err => {
 let server: Server;
 async function bootstrap() {
   try {
-    await RedisClient.connect();
+    await RedisClient.connect().then(() => {
+      subscribeToEvents();
+    });
     server = app.listen(3001, () => {
       logger.info('server is running port 3001');
     });

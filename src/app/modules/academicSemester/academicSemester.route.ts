@@ -7,18 +7,14 @@ const router = express.Router();
 
 router.post(
   '/create-semester',
-  ValidateRequest(
-    AcademicSemesterValidation.createAcademicSemesterUserZodSchema
-  ),
+  ValidateRequest(AcademicSemesterValidation.createAcademicSemesterZodSchema),
   AcademicSemesterController.createSemester
 );
 
 router.get('/:id', AcademicSemesterController.getSingleSemester);
 router.patch(
   '/:id',
-  ValidateRequest(
-    AcademicSemesterValidation.updateAcademicSemesterUserZodSchema
-  ),
+  ValidateRequest(AcademicSemesterValidation.updateAcademicSemesterZodSchema),
   AcademicSemesterController.updateSemester
 );
 
